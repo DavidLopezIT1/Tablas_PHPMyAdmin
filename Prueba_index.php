@@ -34,6 +34,7 @@ include "./conection.php";
          <option value="Tabla_de_usuarios">Conductores</option>
          <option value="Tabla_de_Carros">Automóviles</option>
     </select>
+    <button>Slct</button>
     <?php
  //   $_GET["Selection"] = $Selection;
    // if($Selection == "Conductores"){
@@ -52,13 +53,13 @@ include "./conection.php";
     
 if($_GET["Selection"] == "Tabla_de_usuarios"){
         ?>
-     <a href="./index2.php"> <i class="fa-solid fa-microchip fa-spin fa-spin-reverse"></i></a> 
+     <a href="./index2.php"> <i class="fa-solid fa-object-ungroup fa-beat"></i></a> 
         <?php
    }
 
    else if ($_GET["Selection"] == "Tabla_de_Carros"){
         ?>
-      <a href="./index3.php"> <i class="fa-solid fa-microchip fa-spin fa-spin-reverse"></i></a> 
+      <a href="./index3.php"> <i class="fa-solid fa-object-ungroup fa-beat"></i></a> 
         <?php
    }
    else {
