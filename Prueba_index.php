@@ -6,9 +6,7 @@ $result = $conection->query("SELECT * FROM Rutas ");
 $result2 = $conection->query("SELECT * FROM Conductores ");
 $result3 = $conection->query("SELECT * FROM Carros ");
 
-if($X+$Y){
-   echo ""; 
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +42,13 @@ if($X+$Y){
             <th>Ganancia Ruta</th>
     </thead>
     <tbody>
+    <?php 
+    
+    if(isset($_GET["Button"])){
+    $busqueda= $_GET["Busqueda"];
+    $consulta = $conection->query("SELECT FROM Rutas WHERE Tipo_de_Vehiculo LIKE '%$busqueda%'");
+}
+?>
 <?php 
     while($row= mysqli_fetch_array($result)){
         ?>
