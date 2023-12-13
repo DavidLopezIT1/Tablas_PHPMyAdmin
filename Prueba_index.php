@@ -5,6 +5,10 @@ include "./conection.php";
 $result = $conection->query("SELECT * FROM Rutas ");
 $result2 = $conection->query("SELECT * FROM Conductores ");
 $result3 = $conection->query("SELECT * FROM Carros ");
+
+if($X+$Y){
+   echo ""; 
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +29,11 @@ $result3 = $conection->query("SELECT * FROM Carros ");
     <main>
 
     <form action="" method= "get">
+
+    <input type="text" name="Busqueda">
+    
+    <input type="Submit" Value="Send Master" name="Button">
+
     <table>
     <thead>
             <th>ID Ruta</th>
@@ -34,11 +43,13 @@ $result3 = $conection->query("SELECT * FROM Carros ");
             <th>Nombre Ruta</th>
             <th>Ganancia Ruta</th>
     </thead>
+    <tbody>
 <?php 
     while($row= mysqli_fetch_array($result)){
         ?>
 
-    <tbody>
+    
+
         <tr>
         <td><?php echo $row["ID_Ruta"]; ?></td>
         <td><?php echo $row["Tiempo_Recorrido"]; ?></td>
@@ -61,4 +72,3 @@ $result3 = $conection->query("SELECT * FROM Carros ");
 </tbody>
         </table>
 </form>
-
