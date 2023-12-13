@@ -1,12 +1,8 @@
 <?php
 include "./conection.php";
-
-
-$result = $conection->query("SELECT * FROM Rutas ");
-$result2 = $conection->query("SELECT * FROM Conductores ");
-$result3 = $conection->query("SELECT * FROM Carros ");
-
-
+//$result = $conection->query("SELECT * FROM Rutas ");
+//$result2 = $conection->query("SELECT * FROM Conductores ");
+//$result3 = $conection->query("SELECT * FROM Carros ");
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +25,6 @@ $result3 = $conection->query("SELECT * FROM Carros ");
     <form action="" method= "get">
 
     <input type="text" name="Busqueda">
-    
     <input type="Submit" Value="Send Master" name="Button">
 
     <table>
@@ -42,18 +37,16 @@ $result3 = $conection->query("SELECT * FROM Carros ");
             <th>Ganancia Ruta</th>
     </thead>
     <tbody>
-    <?php 
-    
+<?php 
+
     if(isset($_GET["Button"])){
     $busqueda= $_GET["Busqueda"];
-    $consulta = $conection->query("SELECT FROM Rutas WHERE Tipo_de_Vehiculo LIKE '%$busqueda%'");
+    $consulta = $conection->query("SELECT * FROM Rutas WHERE Tipo_de_Vehiculo LIKE '%$busqueda%'");
 }
 ?>
 <?php 
-    while($row= mysqli_fetch_array($result)){
+    while($row= mysqli_fetch_array($consulta)){
         ?>
-
-    
 
         <tr>
         <td><?php echo $row["ID_Ruta"]; ?></td>
@@ -62,18 +55,18 @@ $result3 = $conection->query("SELECT * FROM Carros ");
         <td><?php echo $row["Tipo_de_Terreno"]; ?></td>
         <td><?php echo $row["Nombre_Ruta"]; ?></td>
         <td><?php echo $row["Ganancia_Ruta"]; ?></td>
-        
         </tr>
         
-        <?php 
-    }
-    ?>
-            <?php 
+<?php 
+        }
+?>
+<?php 
 
-    while($row= $consulta->fetch_array($result))  {      
-    echo $row[''] . $row[''] . $row[''] . $row[''] . $row[''] . $row[""];
-}
+    while($row= $consulta1->fetch_array($consulta))  {      
+    echo $row['ID_Ruta'] . $row['Tiempo_Recorrido'] . $row['Tipo_de_Vehiculo'] . $row['Tipo_de_Terreno'] . $row['Nombre_Ruta'] . $row['Ganancia_Ruta'];
+        }
 ?>
 </tbody>
         </table>
 </form>
+</html>
