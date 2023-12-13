@@ -26,7 +26,7 @@ include "./conection.php";
 
     <h2>Base de datos de Conductores</h2>
 
-<form action="" method= "get">
+    <form action="" method= "get">
 
     <input type="text" name="Busqueda2">
     <input type="Submit" Value="Send Master" name="Button">
@@ -38,26 +38,25 @@ include "./conection.php";
     </select>
 
     <button>Slct</button>
+    
     <?php
-
-if($_GET["Selection2"] == "Tabla_de_Rutas"){
+    if($_GET["Selection2"] == "Tabla_de_Rutas"){
     ?>
     <a href="./Prueba_index.php"> <i class="fa-solid fa-object-ungroup fa-beat"></i> </a>
     <?php 
-} 
+    } 
 
-else if($_GET["Selection2"] == "Tabla_de_Carros"){
+    else if($_GET["Selection2"] == "Tabla_de_Carros"){
     ?>
     <a href="./index3.php"> <i class="fa-solid fa-object-ungroup fa-beat"></i> </a>
     <?php 
-}
-else {
-      
-    echo"";
-     ?>
-        <?php
     }
+    else {
+    echo"";
     ?>
+        <?php
+         }
+         ?>
 
     <table>
     <thead>
@@ -74,18 +73,14 @@ else {
     if(isset($_GET["Button"])){
             $busqueda2 = $_GET["Busqueda2"];
             $Consulta2 = $conection->query("SELECT * FROM Conductores WHERE Num_Cedula LIKE '%$busqueda2%'")
-            ?>
-
+    ?>
             <?php
         }
-        ?>
-<?php 
+            ?>
+    <?php 
     while($row= mysqli_fetch_array($Consulta2)){
-        ?>
-
+    ?>
     <tbody>
-        
-        
         <tr>
         <td><?php echo $row["Num_Cedula"]; ?></td>
         <td><?php echo $row["Nombre"]; ?></td>
@@ -95,21 +90,19 @@ else {
         <td><?php echo $row["Correo"]; ?></td>
         <td><?php echo $row["Tipo_de_Vehiculo"]; ?></td>
         </tr>
-        
-        <?php 
+    <?php 
     }
     ?>
         <?php 
-
         while($row= $consulta->fetch_array($Consulta2))  {      
         echo $row['Num_Cedula'] . $row['Nombre'] . $row['Edad'] . $row['Apellido'] . $row['Telefono'] . $row["Correo"] . $row["Tipo_de_Vehiculo"];
         }
     ?>
     </tbody>
-          </table>
-                 </form>
+    </table>
+    </form>
     </main> 
-    å
+    
     <footer></footer>
 
 </body>
