@@ -12,7 +12,7 @@ $result3 = $conection->query("SELECT * FROM Carros ");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css">
-    <title>Init_PRogram.php</title>
+    <title>Init_Program.php3</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@ $result3 = $conection->query("SELECT * FROM Carros ");
     </header>
 
     <main> 
-
+    <h2>Base de datos de Vehículos</h2>
 <form action="" method= "get">
     <table>
     <thead>
@@ -41,7 +41,7 @@ $result3 = $conection->query("SELECT * FROM Carros ");
     <tbody>
         <tr>
         <td><?php echo $row["Placa_Vehiculo"]; ?></td>
-        <td><?php echo $row["Tipo_de_Vehiculo"]; ?></td>
+        <td name="Vehicle"><?php echo $row["Tipo_de_Vehiculo"]; ?></td>
         <td><?php echo $row["Licencia_De_Transito"]; ?></td>
         <td><?php echo $row["Marca"]; ?></td>
         <td><?php echo $row["Model"]; ?></td>

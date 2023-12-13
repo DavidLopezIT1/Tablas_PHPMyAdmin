@@ -13,7 +13,7 @@ $result3 = $conection->query("SELECT * FROM Carros ");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css">
-    <title>Init_PRogram.php</title>
+    <title>Init_Program.php1</title>
 </head>
 
 <body>

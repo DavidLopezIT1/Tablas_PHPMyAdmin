@@ -12,7 +12,7 @@ $result3 = $conection->query("SELECT * FROM Carros ");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css">
-    <title>Init_PRogram.php</title>
+    <title>Init_Program.php2</title>
 </head>
 
 <body>
@@ -22,6 +22,8 @@ $result3 = $conection->query("SELECT * FROM Carros ");
     </header>
 
     <main> 
+
+    <h2>Base de datos de Conductores</h2>
 
 <form action="" method= "get">
     <table>
